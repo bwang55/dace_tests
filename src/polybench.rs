@@ -1,10 +1,7 @@
 use dace::ast::Node;
 use std::rc::Rc;
 
-
-
-fn trmm_trace(M: usize, N:usize) -> Rc<Node> {
-
+fn trmm_trace(M: usize, N: usize) -> Rc<Node> {
     let i_loop_ref = Node::new_single_loop("i", 0, M as i32);
     let j_loop_ref = Node::new_single_loop("j", 0, N as i32);
     let k_loop_ref = Node::new_single_loop("k", Node::get_lb(&i_loop_ref).unwrap() + 1, M as i32);
